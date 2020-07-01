@@ -8,11 +8,15 @@ import androidx.room.PrimaryKey
 data class Country(
     @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "country_id") val countryId: Int,
     val name: String,
+    val capital: String,
     @ColumnInfo(name = "country_description") val countryDescription: String,
     val surface: String,
     val population: String,
     val flag: Int,
-    val anthem: Int
+    val anthem: Int,
+    val personalities : String,
+    val resources : String,
+    var favourite : Boolean = false
 ) {
 
 

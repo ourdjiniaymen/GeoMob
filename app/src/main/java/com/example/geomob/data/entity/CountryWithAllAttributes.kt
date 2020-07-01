@@ -14,21 +14,16 @@ data class CountryWithAllAttributes(
         parentColumn = "country_id",
         entityColumn = "country"
     )
-    val ListPersonalities: List<Personality>,
+    val ListVideos: List<Video>,
     @Relation(
         parentColumn = "country_id",
         entityColumn = "country"
     )
-    val ListResources: List<Resource>,
+    val ListSlideshow: List<SlideShow>,
     @Relation(
         parentColumn = "country_id",
         entityColumn = "country"
     )
-    val ListVideos: List<Video>/*,
-    @Relation(
-        parentColumn = "country_id",
-        entityColumn = "country"
-    )
-    val ListSlideshow: List<SlideShow>*/
+    val ListTwitter: List<Twitter>
 
 )

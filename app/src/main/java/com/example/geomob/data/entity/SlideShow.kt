@@ -9,5 +9,5 @@ import java.sql.Blob
 data class SlideShow(
     @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "slideshow_id") val slideshowId: Int,
     val country: Int,
-    val slideshow : Int
+    val slideshow : String
 )

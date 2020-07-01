@@ -3,10 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity"
+    tools:context=".ui.mainActivity.MainActivity"
     android:orientation="vertical">
 
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_countries"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:listitem="@layout/country_item" />
 
 
 </LinearLayout>

@@ -8,26 +8,33 @@ import com.example.geomob.data.entity.*
 @Dao
 interface CountryDao {
     @Transaction
-    @Query("SELECT * FROM country_table ORDER BY name DESC")
+    @Query("SELECT * FROM country_table ORDER BY name ASC")
     fun getAllCountries(): LiveData<List<CountryWithAllAttributes?>?>?//so we can observe the changes
 
     @Transaction
-    @Query("SELECT * FROM country_table WHERE name = :name ")
-    fun getCountryByName(name: String):LiveData<CountryWithAllAttributes?>?
+    @Query("SELECT * FROM country_table WHERE favourite ORDER BY name ASC")
+    fun getFavoritesCountries(): LiveData<List<CountryWithAllAttributes?>?>?//so we can observe the changes
+
+    @Update
+    fun updateCountry(country: Country)
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun addCountry(country: Country)
+    fun addCountries(countries: List<Country>)
+
+
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun addResource(resource: Resource)
+    fun addHistories(histories: List<History>)
+
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun addHistory(history: History)
+    fun addVideos(videos: List<Video>)
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun addPersonality(personality: Personality)
+    fun addTwitter(twitters: List<Twitter>)
 
-   /* @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun addVideo(video: Video)*/
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun addSlideshow(slideShows: List<SlideShow>)
+
 
 }

@@ -8,7 +8,8 @@ import androidx.room.PrimaryKey
 data class Video(
     @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "video_id") val videoId: Int,
     val country: Int,
-    val video: Int
+    val title: String,
+    val video: String
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -26,7 +27,7 @@ data class Video(
     override fun hashCode(): Int {
         var result = videoId
         result = 31 * result + country
-        result = 31 * result + video
+        result = 31 * result + video.hashCode()
         return result
     }
 }
